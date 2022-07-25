@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Electrolize);
+.disclaimer {
+  background: hsla(0, 0%, 0%, 1);
+}
+#led {
+  width: 100%;
+}
+
+#led table,
+#led canvas {
+  width: 100%;
+  height: 110px;
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#led td {
+  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid hsla(0,0%,20%,1);
+}
+
+#led td.off {
+  background: hsla(0,0%,7%,1);
+}
