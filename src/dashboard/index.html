@@ -1,132 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <!-- font awesome CDN -->
-    <!-- favicon -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo.png" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/disclaimer.css" />
-    <!-- Bootstrap v4.4.1 css -->
-        <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
-  </head>
-  <body>
-    <div class="dashboard_grid container-fluid">
-      <div class="row header_row">
-          <div class="col-lg-4 col-md-4">
-              <a href="/" class="logo"><img src="/assets/images/logo.png" alt="logo"/></a>
-          </div>
-          <div class="col-lg-8 col-md-8">
-                <!-- <div class="refreshers col-md-2">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <!-- font awesome CDN -->
+  <!-- favicon -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/disclaimer.css" />
+  <!-- Bootstrap v4.4.1 css -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <audio id="myAudio" >
+    <source src="../assets/hit.ogg" type="audio/ogg">
+    <source src="../assets/hit.mp3" type="audio/mpeg">
+    
+  </audio>
+  
+  <div class="dashboard_grid container-fluid">
+    <img src="../assets/images/cheetah-running.gif" alt="" style="position: absolute; z-index:-1; opacity: 0.4;" width="100%" height="130px">
+    <div class="row header_row">
+      <div class="col-lg-4 col-md-4">
+        <a href="/" class="logo"><img src="../assets/images/logo.png" alt="logo" /></a>
+      </div>
+      <div class="col-lg-8 col-md-8">
+        <!-- <div class="refreshers col-md-2">
                   <i class="fas fa-sync-alt"></i>
                 </div>  -->
-                  <button class="connect_btn">
-                          <img src="/assets/images/icon/connect_wallet.svg" alt="" />
-                          <span class="connect_btn_txt">CONNECT</span> 
-                    </button>
-            </div>
+        <button class="connect_btn">
+          <img src="../assets/images/icon/connect_wallet.svg" alt="" />
+          <span class="connect_btn_txt">CONNECT</span>
+        </button>
       </div>
-      <div class="row disclaimer">
-        <table>
-          <tbody>
-              <tr>
-                <td></td>
-                <td>
-                  <div id="led"></div>
-               </td>
-             </tr>
-           </tbody>
-        </table>
-      </div>
-      <div class="row content-row">
-        <div class="col-lg-3 col-md-6 left-area" style="background:transparent;">
-            <div class="sidebar">
-              <div class="sidebar_menu_list">
-                <ul class="nav_items">
-                  <li class="nav_link active_nav_link dash_li">
-                    <i class="fas fa-signal"></i><a href="javascript:void(0);">Dashboard</a>
-                  </li>
-                  <li class="nav_link play_li">
-                    <i class="fa fa-play" aria-hidden="true"></i><a href="javascript:void(0);">Play</a>
-                  </li>
-                  <li class="nav_link pool_li">
-                    <i class="fas fa-comment-dollar"></i>
-                    <a href="javascript:void(0);">Prize Pool</a>
-                  </li>
-                  <li class="nav_link nft_li">
-                    <i class="fas fa-database"></i><a href="javascript:void(0);">My Cheetahs</a>
-                  </li>
-                  <li class="nav_link htp_li">
-                    <i class="fas fa-hands-helping"></i><a href="javascript:void(0);">How to Play?</a>
-                  </li>
-                </ul>
-              </div>
+    </div>
+    <div class="row disclaimer">
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>
+              <div id="led" style="height: 85px;"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+    <div class="row content-row">
+      <div class="col-lg-3 col-md-6 left-area" style="background:transparent;">
+        <img src="../assets/images/allcheetah.jpeg" alt="" class="cheetahImg">
+        <div class="sidebar">
+          <div class="sidebar_menu_list">
+            <ul class="nav_items">
+              <li class="nav_link active_nav_link dash_li">
+                <i class="fas fa-signal"></i><a href="javascript:void(0);" onclick="playAudio()" >Dashboard</a>
+              </li>
+              <li class="nav_link play_li">
+                <i class="fa fa-play" aria-hidden="true"></i><a href="javascript:void(0);" onclick="playAudio()">Play</a>
+              </li>
+              <li class="nav_link pool_li">
+                <i class="fas fa-comment-dollar"></i>
+                <a href="javascript:void(0);" onclick="playAudio()">Prize Pool</a>
+              </li>
+              <li class="nav_link nft_li">
+                <i class="fas fa-database"></i><a href="javascript:void(0);" onclick="playAudio()">My Cheetahs</a>
+              </li>
+              <li class="nav_link htp_li">
+                <i class="fas fa-hands-helping"></i><a href="javascript:void(0);" onclick="playAudio()">How to Play?</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-lg-2 middle_area right_panel col-md-6" style="background:transparent;">
-          <div class="progress_div col-lg-12">
-            <div class="col-lg-12">
-                <div class="title_mid" style="text-align: center;">
-                  <p>Sppedah Cup Eligibility</p>
-                </div>
-                <div class="progress_bar">
-                  <div class="frame">
-                    <div>
-                      <div class="circle-big">
-                          <img class="cup-image" src="/assets/images/nft/speedah_cup.png" alt="" width="50" height="50" />
-                        <svg>
-                          <circle class="bg" cx="57" cy="57" r="52"></circle>
-                          <circle class="progress" cx="57" cy="57" r="52"></circle>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="title_mid">
-                  <p>Earnings</p>
-                </span>
-                <div class="text-earning"><span><i class="fa fa-spinner fa-spin"></i> EVMOS</span></div>
+      </div>
 
-                <div class="data_btn">
-                  <button class="custom-btn-data btn-data" disabled>Claim <i class="fa fa-spinner fa-spin"></i></button>
-                </div>
-            </div>
-            <!-- <div class="col-lg-12">
-              <img src="./img/coming-soon.png" class="hammer1" />
-            </div> -->
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-12" style="background:transparent;">
+      <div class=" middle_area right_panel col-md-6" style="background:transparent;">
+        <div class="col-md-12" style="background:transparent;">
           <div class="cards_area right_panel row">
             <div class="mid_gradient_img row">
-              <div class="box_1 col-lg-4">
+              <div class="box_1 col-md-3">
                 <div class="box_1_data">
-                  <h1 class="text-css"><span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>M</span><span>A</span><span>T</span><span>C</span><span>H</span><span>E</span><span>S</span></h1>
+                  <h1 class="text-css">
+                    <span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>M</span><span>A</span><span>T</span><span>C</span><span>H</span><span>E</span><span>S</span>
+                  </h1>
                   <div class="text-css">
                     <h1><span>0</span></h1>
                   </div>
                 </div>
               </div>
-              <div class="box_2 col-lg-4">
+              <div class="box_2 col-md-3">
                 <div class="box_1_data">
-                <h1 class="text-css"><span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>W</span><span>O</span><span>N</span></h1>
+                  <h1 class="text-css">
+                    <span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>W</span><span>O</span><span>N</span>
+                  </h1>
                   <div class="text-css">
                     <h1><span>0</span></h1>
                   </div>
                 </div>
               </div>
-              <div class="box_3 col-lg-4">
+              <div class="box_3 col-md-3">
                 <div class="box_1_data">
-                  <h1 class="text-css"><span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>L</span><span>O</span><span>S</span><span>T</span></h1>
+                  <h1 class="text-css">
+                    <span>T</span><span>O</span><span>T</span><span>A</span><span>L</span><span> </span><span>L</span><span>O</span><span>S</span><span>T</span>
+                  </h1>
                   <div class="text-css">
                     <h1><span>0</span></h1>
                   </div>
@@ -134,90 +115,150 @@
               </div>
             </div>
           </div>
-          <div class="nft_img_collection right_panel row">
-            <div class="nft_data_inner">
-              <h3>My Unimpresseds</h3>
-              <div class="nft_img_list">
+        </div>
+
+        <div class="progress_div">
+          <div class="progress_div_contents">
+        <div class="title_mid" style="text-align: center;">
+          <p>Sppedah Cup Eligibility</p>
+        </div>
+        <div class="progress_bar">
+          <div class="frame">
+            <div>
+              <div class="circle-big">
+                <img class="cup-image" src="../assets/images/nft/speedah_cup.png" alt="" width="50" height="50" />
+                <svg>
+                  <circle class="bg" cx="57" cy="57" r="52"></circle>
+                  <circle class="progress" cx="57" cy="57" r="52"></circle>
+                </svg>
               </div>
             </div>
           </div>
-          <div class="play_collection right_panel row">
-            <!-- <h3>Play</h3> -->
-            <div class="btn_play_list row">
-              <div class="c_soon w_o_t col-lg-12 col-md-12">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12">
-                    <button class="text1">War of Tribe</button>
-                  </div>
-                </div>
-                <!-- <img src="./img/coming-soon.png" class="hammer" /> -->
-              </div>
-              <div class="c_soon s_r col-lg-12 col-md-12">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12">
-                    <button class="text1">Speedah Run</button>
-                  </div>
-                </div>
-                <!-- <img src="./img/coming-soon.png" class="hammer" /> -->
-              </div>
-            </div> 
+        </div>
+        <span class="title_mid">
+          <p>Earnings</p>
+        </span>
+        <div class="text-earning"><span><i class="fa fa-spinner fa-spin"></i> EVMOS</span></div>
+
+        <div class="data_btn">
+          <button class="custom-btn-data btn-data" disabled>Claim <i class="fa fa-spinner fa-spin"></i></button>
+        </div>
+      </div>
+      <!-- <div class="col-lg-12">
+          <img src="./img/coming-soon.png" class="hammer1" />
+        </div> -->
+    </div>
+
+      </div>
+        <div class="nft_img_collection right_panel row">
+          <div class="nft_data_inner">
+            <h3>My Unimpresseds</h3>
+            <div class="nft_img_list">
+            </div>
           </div>
-          <div class="price_pool right_panel row">
-            <h3>Prize Pool</h3>
-            <div class="btn_play_list">
-              <div class="center-loader">
-                <h4>Coming</h4>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <h4>Soon</h4>
+        </div>
+        <div class="play_collection right_panel row">
+          <!-- <h3>Play</h3> -->
+          <div class="btn_play_list row">
+            <div class="c_soon w_o_t col-lg-12 col-md-12">
+              <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <button class="text1 play-btn">War of Tribe</button>
+                </div>
               </div>
-              <!-- <div class="c_soon">
+              <!-- <img src="./img/coming-soon.png" class="hammer" /> -->
+            </div>
+            <div class="c_soon s_r col-lg-12 col-md-12">
+              <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <button class="text1 play-btn">Speedah Run</button>
+                </div>
+              </div>
+              <!-- <img src="./img/coming-soon.png" class="hammer" /> -->
+            </div>
+          </div>
+        </div>
+        <div class="price_pool right_panel row">
+          <h3 class="prize-pool-header">Prize Pool</h3>
+          <div class="btn_play_list">
+            <div class="center-loader">
+              <h4>Coming</h4>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <h4>Soon</h4>
+            </div>
+            <!-- <div class="c_soon">
                 <img src="./img/coming-soon.png" class="hammer" />
               </div> -->
-            </div>
           </div>
-          <div class="how_to_play right_panel row">
-            <div class="">
-              <ul style="list-style-type: none;">
-                <li> <strong class="htp_subtitle"> War of tribe: </strong><br> War of tribe is a team game. The stronger your team more chances of winning<br>
-                  <ul style="list-style-type: none;">
-                    <li><strong class="htp_sub_title">How to Participate:-  </strong> Any Cheetah NFT holder can participate in game. Cheetah can choose between Team A and Team B. Multiple entries allowed with different cheetah NFT. After participation players can get access to their respective team Chat Box</li>
-                    <li><strong class="htp_sub_title">Wins:- </strong> Winning team will be decided on how much gas fee a particular NFT burned while training for Speedah </li>
-                    <li><strong class="htp_sub_title">Game Dynamics:- </strong> Cheetah NFT’s Powers are auto upgraded based on the Gas fee which is dynamic after every match. The more you train the more stronger you will become. </li>
-                    <li><strong class="htp_sub_title">Prize Distribution:-</strong> Prize will be distributed among the winning team. Prize for 1 Cheetah holder = Total Prize Pool / Total number of Cheetahs participated </li>
-                  </ul>
-                </li>
-                <li> <strong class="htp_subtitle"> Speedah Run: </strong> Speedah Run will be a Solo game to win more. Each cheetah will be consider one different entry. Multiple entries will not be allowed. <br>
-                  <ul style="list-style-type: none;">
-                    <li><strong class="htp_sub_title">How to Participate:-  </strong> Any Cheetah NFT holder can participate in game.Multiple entries allowed with different cheetah NFT.</li>
-                    <li><strong class="htp_sub_title">Wins:- </strong> Winning team will be decided on how much gas fee a particular NFT burned while training for Speedah </li>
-                    <li><strong class="htp_sub_title">Game Dynamics:- </strong> Cheetah NFT’s Powers are auto upgraded based on the Gas fee which is dynamic after every match. The more you train the more stronger you will become. One player will be selected based on power at the end of game. </li>
-                    <li><strong class="htp_sub_title">Prize Distribution:-</strong> Prize will be distributed among the winning Cheetah. All the prizepool will be awarded to highest Power Cheetah. </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>     
         </div>
-      </div> 
+        <div class="how_to_play right_panel row">
+          <div class="">
+            <ul style="list-style-type: none;">
+              <li> <strong class="htp_subtitle"> War of tribe: </strong><br> War of tribe is a team game. The stronger
+                your team more chances of winning<br>
+                <ul style="list-style-type: none;">
+                  <li><strong class="htp_sub_title">How to Participate:- </strong> Any Cheetah NFT holder can
+                    participate in game. Cheetah can choose between Team A and Team B. Multiple entries allowed with
+                    different cheetah NFT. After participation players can get access to their respective team Chat Box
+                  </li>
+                  <li><strong class="htp_sub_title">Wins:- </strong> Winning team will be decided on how much gas fee a
+                    particular NFT burned while training for Speedah </li>
+                  <li><strong class="htp_sub_title">Game Dynamics:- </strong> Cheetah NFT’s Powers are auto upgraded
+                    based on the Gas fee which is dynamic after every match. The more you train the more stronger you
+                    will become. </li>
+                  <li><strong class="htp_sub_title">Prize Distribution:-</strong> Prize will be distributed among the
+                    winning team. Prize for 1 Cheetah holder = Total Prize Pool / Total number of Cheetahs participated
+                  </li>
+                </ul>
+              </li>
+              <li> <strong class="htp_subtitle"> Speedah Run: </strong> Speedah Run will be a Solo game to win more.
+                Each cheetah will be consider one different entry. Multiple entries will not be allowed. <br>
+                <ul style="list-style-type: none;">
+                  <li><strong class="htp_sub_title">How to Participate:- </strong> Any Cheetah NFT holder can
+                    participate in game.Multiple entries allowed with different cheetah NFT.</li>
+                  <li><strong class="htp_sub_title">Wins:- </strong> Winning team will be decided on how much gas fee a
+                    particular NFT burned while training for Speedah </li>
+                  <li><strong class="htp_sub_title">Game Dynamics:- </strong> Cheetah NFT’s Powers are auto upgraded
+                    based on the Gas fee which is dynamic after every match. The more you train the more stronger you
+                    will become. One player will be selected based on power at the end of game. </li>
+                  <li><strong class="htp_sub_title">Prize Distribution:-</strong> Prize will be distributed among the
+                    winning Cheetah. All the prizepool will be awarded to highest Power Cheetah. </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- web3 min.js -->
-    <script src="/assets/js/web3.min.js"></script>
-    <!-- Bootstrap.min js -->
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <!-- Jquery min.js -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="./js/app.js"></script>
-    <!-- Led font -->
-    <script src="./js/ledFont.js"></script>
-    <script src="./js/disclaimer.js"></script>
-  </body>
+  </div>
+  <!-- web3 min.js -->
+  <script src="../assets/js/web3.min.js"></script>
+  <!-- Bootstrap.min js -->
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <!-- Jquery min.js -->
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="./js/app.js"></script>
+  <!-- Led font -->
+  <script src="./js/ledFont.js"></script>
+  <script src="./js/disclaimer.js"></script>
+  <script>
+    
+    function playAudio() { 
+      var x = document.getElementById("myAudio"); 
+      x.currentTime=0;
+      x.play(); 
+    } 
+    
+    </script>
+</body>
+
 </html>

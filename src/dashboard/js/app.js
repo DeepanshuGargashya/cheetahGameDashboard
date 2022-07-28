@@ -202,3 +202,13 @@ async function getAccAddr() {
   accountAddress = accountAddress[0];
   return accountAddress;
 }
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  console.log('playing')
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 

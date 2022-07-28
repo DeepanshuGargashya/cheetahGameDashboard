@@ -4494,7 +4494,7 @@ Mint Sect
     content: ":";
     color: rgba(255, 255, 255, 0.5);
 }
-.3 ul li.seconds:before{
+.ul li.seconds:before{
     display: none;
 }
 
